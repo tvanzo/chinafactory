@@ -1,0 +1,776 @@
+<!-- ========= furniture.html ========= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Furniture Manufacturers China | Vetted Factory Tours & Map</title>
+  <meta name="description" content="Discover vetted furniture manufacturers in China. Like TripAdvisor for factories - explore top suppliers on an interactive map, plan your factory tour, and visit the best furniture makers in Foshan, Dongguan & beyond.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GPDQTFFMT1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GPDQTFFMT1');
+  </script>
+</head>
+<body class="bg-slate-50 font-sans text-gray-800">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600">ChinaFactoryTours</a>
+      <div class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#map" class="hover:text-indigo-600 transition">Factory Map</a>
+        <a href="#factories" class="hover:text-indigo-600 transition">Vetted Suppliers</a>
+        <a href="#plan" class="hover:text-indigo-600 transition">Plan Your Trip</a>
+        <a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Get Guide</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative isolate overflow-hidden bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 text-white">
+    <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm mb-6">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            47 Vetted Furniture Factories
+          </div>
+          <h1 class="text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            The <span class="text-yellow-300">TripAdvisor</span> for Furniture Factories in China
+          </h1>
+          <p class="mt-6 text-lg lg:text-xl leading-relaxed text-indigo-100">
+            Discover, compare, and visit the most reputable furniture manufacturers across China. 
+            All factories verified, mapped, and ready for your inspection tour.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a href="#map" class="rounded-xl bg-white text-indigo-700 px-8 py-4 font-bold text-center shadow-lg hover:bg-indigo-50 transition flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 7m0 13V7"></path></svg>
+              Explore the Map
+            </a>
+            <a href="#factories" class="rounded-xl bg-white/10 px-8 py-4 font-semibold text-center hover:bg-white/20 transition">
+              View All Suppliers
+            </a>
+          </div>
+          <div class="mt-8 flex items-center gap-6 text-sm text-indigo-200">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              Pre-Vetted Factories
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              Real Reviews
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              Trip Planning
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 lg:mt-0 relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2940&auto=format&fit=crop" 
+                 alt="Modern furniture factory showroom in China" 
+                 class="w-full h-80 lg:h-96 object-cover"
+                 loading="lazy" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+              <p class="text-white font-medium">Foshan Furniture Market - China's Largest</p>
+            </div>
+          </div>
+          <!-- Floating badge -->
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl p-4 flex items-center gap-3">
+            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <p class="font-bold text-gray-900">100% Verified</p>
+              <p class="text-sm text-gray-500">Factory Audits Complete</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="bg-white border-b">
+    <div class="mx-auto max-w-7xl px-6 py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <p class="text-3xl font-bold text-indigo-600">47</p>
+          <p class="text-sm text-gray-600 mt-1">Vetted Factories</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-indigo-600">12</p>
+          <p class="text-sm text-gray-600 mt-1">Cities Covered</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-indigo-600">320+</p>
+          <p class="text-sm text-gray-600 mt-1">Buyers Connected</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-indigo-600">4.9★</p>
+          <p class="text-sm text-gray-600 mt-1">Average Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section id="map" class="py-20 bg-slate-100">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Interactive Factory Map</h2>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Like Google Maps for furniture factories. See exactly where each supplier is located, 
+          plan efficient routes, and visualize factory clusters.
+        </p>
+      </div>
+      
+      <!-- Map Container -->
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="lg:grid lg:grid-cols-3">
+          <!-- Sidebar -->
+          <div class="lg:col-span-1 bg-white border-r border-gray-200 max-h-[600px] overflow-y-auto">
+            <div class="p-4 border-b bg-gray-50">
+              <h3 class="font-semibold text-gray-900">Filter by Category</h3>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <button class="px-3 py-1.5 bg-indigo-600 text-white text-sm rounded-full">All</button>
+                <button class="px-3 py-1.5 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300 transition">Residential</button>
+                <button class="px-3 py-1.5 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300 transition">Commercial</button>
+                <button class="px-3 py-1.5 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300 transition">Outdoor</button>
+                <button class="px-3 py-1.5 bg-gray-200 text-gray-700 text-sm rounded-full hover:bg-gray-300 transition">Custom OEM</button>
+              </div>
+            </div>
+            <div class="divide-y divide-gray-100">
+              <!-- Factory List Item 1 -->
+              <div class="p-4 hover:bg-indigo-50 transition cursor-pointer group">
+                <div class="flex items-start gap-3">
+                  <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Factory">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-semibold text-gray-900 group-hover:text-indigo-600">Dragonwood Furniture</h4>
+                    <p class="text-sm text-gray-500">Foshan, Guangdong</p>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="text-yellow-500 text-sm">★★★★★</span>
+                      <span class="text-xs text-gray-400">4.9 (28 reviews)</span>
+                    </div>
+                    <div class="flex gap-2 mt-2">
+                      <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">Verified</span>
+                      <span class="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">OEM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Factory List Item 2 -->
+              <div class="p-4 hover:bg-indigo-50 transition cursor-pointer group">
+                <div class="flex items-start gap-3">
+                  <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Factory">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-semibold text-gray-900 group-hover:text-indigo-600">Elite Sofa Manufacturing</h4>
+                    <p class="text-sm text-gray-500">Dongguan, Guangdong</p>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="text-yellow-500 text-sm">★★★★★</span>
+                      <span class="text-xs text-gray-400">4.8 (42 reviews)</span>
+                    </div>
+                    <div class="flex gap-2 mt-2">
+                      <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">Verified</span>
+                      <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded">High-End</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Factory List Item 3 -->
+              <div class="p-4 hover:bg-indigo-50 transition cursor-pointer group">
+                <div class="flex items-start gap-3">
+                  <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Factory">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-semibold text-gray-900 group-hover:text-indigo-600">Modern Living Co.</h4>
+                    <p class="text-sm text-gray-500">Shenzhen, Guangdong</p>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="text-yellow-500 text-sm">★★★★★</span>
+                      <span class="text-xs text-gray-400">4.7 (35 reviews)</span>
+                    </div>
+                    <div class="flex gap-2 mt-2">
+                      <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">Verified</span>
+                      <span class="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded">Fast Delivery</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Factory List Item 4 -->
+              <div class="p-4 hover:bg-indigo-50 transition cursor-pointer group">
+                <div class="flex items-start gap-3">
+                  <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Factory">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-semibold text-gray-900 group-hover:text-indigo-600">Artisan Woodworks</h4>
+                    <p class="text-sm text-gray-500">Hangzhou, Zhejiang</p>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="text-yellow-500 text-sm">★★★★★</span>
+                      <span class="text-xs text-gray-400">5.0 (19 reviews)</span>
+                    </div>
+                    <div class="flex gap-2 mt-2">
+                      <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">Verified</span>
+                      <span class="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded">Artisan</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Factory List Item 5 -->
+              <div class="p-4 hover:bg-indigo-50 transition cursor-pointer group">
+                <div class="flex items-start gap-3">
+                  <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=200&auto=format&fit=crop" class="w-full h-full object-cover" alt="Factory">
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-semibold text-gray-900 group-hover:text-indigo-600">Grand Office Solutions</h4>
+                    <p class="text-sm text-gray-500">Guangzhou, Guangdong</p>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="text-yellow-500 text-sm">★★★★☆</span>
+                      <span class="text-xs text-gray-400">4.6 (31 reviews)</span>
+                    </div>
+                    <div class="flex gap-2 mt-2">
+                      <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">Verified</span>
+                      <span class="text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded">Commercial</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 border-t text-center">
+              <a href="#factories" class="text-indigo-600 font-medium hover:underline">View all 47 factories →</a>
+            </div>
+          </div>
+          
+          <!-- Map -->
+          <div class="lg:col-span-2 h-[400px] lg:h-[600px] relative">
+            <div id="factory-map" class="w-full h-full"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Regions -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Major Furniture Manufacturing Hubs</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="rounded-2xl overflow-hidden shadow-lg group">
+          <div class="h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop" 
+                 alt="Foshan furniture market" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Foshan, Guangdong</h3>
+            <p class="text-gray-600 mb-4">The world's largest furniture manufacturing hub. Over 3,000 factories producing everything from budget to luxury pieces.</p>
+            <div class="flex items-center gap-4 text-sm">
+              <span class="text-indigo-600 font-semibold">18 Factories</span>
+              <span class="text-gray-400">|</span>
+              <span class="text-gray-500">Residential Focus</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rounded-2xl overflow-hidden shadow-lg group">
+          <div class="h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800&auto=format&fit=crop" 
+                 alt="Dongguan manufacturing" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Dongguan, Guangdong</h3>
+            <p class="text-gray-600 mb-4">Premium upholstery and sofa specialists. Known for high-quality leather goods and custom manufacturing.</p>
+            <div class="flex items-center gap-4 text-sm">
+              <span class="text-indigo-600 font-semibold">12 Factories</span>
+              <span class="text-gray-400">|</span>
+              <span class="text-gray-500">Upholstery Specialists</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rounded-2xl overflow-hidden shadow-lg group">
+          <div class="h-48 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" 
+                 alt="Hangzhou furniture" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Hangzhou, Zhejiang</h3>
+            <p class="text-gray-600 mb-4">Artisan and designer furniture hub. Home to innovative modern designs and sustainable manufacturing.</p>
+            <div class="flex items-center gap-4 text-sm">
+              <span class="text-indigo-600 font-semibold">9 Factories</span>
+              <span class="text-gray-400">|</span>
+              <span class="text-gray-500">Designer Focus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="plan" class="py-20 bg-gradient-to-br from-indigo-50 to-cyan-50">
+    <div class="mx-auto max-w-7xl px-6">
+      <h2 class="text-3xl font-bold text-center mb-4">Plan Your Factory Tour Like a Pro</h2>
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+        We make visiting furniture factories in China as easy as booking a hotel. 
+        Here's how our platform works:
+      </p>
+      
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">1. Discover</h3>
+          <p class="text-gray-600 text-sm">Browse our interactive map of vetted furniture factories across China</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">2. Compare</h3>
+          <p class="text-gray-600 text-sm">Read verified reviews, view certifications, and compare capabilities</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">3. Plan</h3>
+          <p class="text-gray-600 text-sm">Build your itinerary with our route optimizer and local guides</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          </div>
+          <h3 class="font-bold text-lg mb-2">4. Visit</h3>
+          <p class="text-gray-600 text-sm">Tour factories with our bilingual guides and negotiate directly</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Factories -->
+  <section id="factories" class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+        <div>
+          <h2 class="text-3xl font-bold">Featured Furniture Suppliers</h2>
+          <p class="mt-2 text-gray-600">Hand-picked, pre-vetted factories ready for your visit</p>
+        </div>
+        <a href="#contact" class="mt-4 md:mt-0 text-indigo-600 font-medium hover:underline">Download Complete Directory →</a>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="border rounded-2xl p-6 hover:shadow-xl transition bg-white">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center">
+              <span class="text-2xl">🛋️</span>
+            </div>
+            <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Verified</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Dragonwood Furniture Co.</h3>
+          <p class="text-sm text-gray-500 mb-3">📍 Foshan, Guangdong</p>
+          <p class="text-gray-600 text-sm mb-4">Specializes in solid wood dining sets, bedroom furniture, and custom cabinetry. MOQ: 50 units.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Solid Wood</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Residential</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">OEM</span>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t">
+            <div class="flex items-center gap-1">
+              <span class="text-yellow-500">★★★★★</span>
+              <span class="text-sm text-gray-500">4.9</span>
+            </div>
+            <button class="text-indigo-600 text-sm font-medium hover:underline">View Profile</button>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="border rounded-2xl p-6 hover:shadow-xl transition bg-white">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center">
+              <span class="text-2xl">🪑</span>
+            </div>
+            <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Verified</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Elite Sofa Manufacturing</h3>
+          <p class="text-sm text-gray-500 mb-3">📍 Dongguan, Guangdong</p>
+          <p class="text-gray-600 text-sm mb-4">Premium leather and fabric sofas. Italian design team. Export to 40+ countries. BSCI certified.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Upholstery</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Leather</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">High-End</span>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t">
+            <div class="flex items-center gap-1">
+              <span class="text-yellow-500">★★★★★</span>
+              <span class="text-sm text-gray-500">4.8</span>
+            </div>
+            <button class="text-indigo-600 text-sm font-medium hover:underline">View Profile</button>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="border rounded-2xl p-6 hover:shadow-xl transition bg-white">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center">
+              <span class="text-2xl">📐</span>
+            </div>
+            <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Verified</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Modern Living Co.</h3>
+          <p class="text-sm text-gray-500 mb-3">📍 Shenzhen, Guangdong</p>
+          <p class="text-gray-600 text-sm mb-4">Scandinavian and modern minimalist designs. Fast turnaround times. Strong R&D team.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Modern</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Nordic</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Fast Delivery</span>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t">
+            <div class="flex items-center gap-1">
+              <span class="text-yellow-500">★★★★★</span>
+              <span class="text-sm text-gray-500">4.7</span>
+            </div>
+            <button class="text-indigo-600 text-sm font-medium hover:underline">View Profile</button>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="border rounded-2xl p-6 hover:shadow-xl transition bg-white">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 bg-rose-100 rounded-xl flex items-center justify-center">
+              <span class="text-2xl">🏢</span>
+            </div>
+            <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Verified</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Grand Office Solutions</h3>
+          <p class="text-sm text-gray-500 mb-3">📍 Guangzhou, Guangdong</p>
+          <p class="text-gray-600 text-sm mb-4">Commercial office furniture, workstations, and ergonomic seating. Project specialists.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Commercial</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Office</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">B2B</span>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t">
+            <div class="flex items-center gap-1">
+              <span class="text-yellow-500">★★★★☆</span>
+              <span class="text-sm text-gray-500">4.6</span>
+            </div>
+            <button class="text-indigo-600 text-sm font-medium hover:underline">View Profile</button>
+          </div>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="border rounded-2xl p-6 hover:shadow-xl transition bg-white">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center">
+              <span class="text-2xl">🌿</span>
+            </div>
+            <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Verified</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">NatureCraft Outdoor</h3>
+          <p class="text-sm text-gray-500 mb-3">📍 Xiamen, Fujian</p>
+          <p class="text-gray-600 text-sm mb-4">Teak and rattan outdoor furniture. Weather-resistant finishes. Resort-grade quality.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Outdoor</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Teak</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Resort</span>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t">
+            <div class="flex items-center gap-1">
+              <span class="text-yellow-500">★★★★★</span>
+              <span class="text-sm text-gray-500">4.9</span>
+            </div>
+            <button class="text-indigo-600 text-sm font-medium hover:underline">View Profile</button>
+          </div>
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="border rounded-2xl p-6 hover:shadow-xl transition bg-white">
+          <div class="flex items-start justify-between mb-4">
+            <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center">
+              <span class="text-2xl">✨</span>
+            </div>
+            <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Verified</span>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Artisan Woodworks</h3>
+          <p class="text-sm text-gray-500 mb-3">📍 Hangzhou, Zhejiang</p>
+          <p class="text-gray-600 text-sm mb-4">Handcrafted designer pieces. Sustainable bamboo and reclaimed wood specialists.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Designer</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Sustainable</span>
+            <span class="text-xs bg-gray-100 px-2 py-1 rounded">Artisan</span>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t">
+            <div class="flex items-center gap-1">
+              <span class="text-yellow-500">★★★★★</span>
+              <span class="text-sm text-gray-500">5.0</span>
+            </div>
+            <button class="text-indigo-600 text-sm font-medium hover:underline">View Profile</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="#contact" class="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-indigo-700 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          Download Complete Factory Directory (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-slate-900 text-white">
+    <div class="mx-auto max-w-7xl px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">What Buyers Say</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-800 rounded-2xl p-6">
+          <div class="flex text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-gray-300 mb-4">"The interactive map was a game-changer. I could see exactly which factories were near each other and plan my route efficiently. Saved me 3 days of backtracking."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center font-bold">JM</div>
+            <div>
+              <p class="font-medium">James Mitchell</p>
+              <p class="text-sm text-gray-400">Furniture Buyer, Australia</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-slate-800 rounded-2xl p-6">
+          <div class="flex text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-gray-300 mb-4">"Finally, a TripAdvisor for factories! Every supplier was exactly as described. No more wasting time with unqualified manufacturers."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center font-bold">SC</div>
+            <div>
+              <p class="font-medium">Sarah Chen</p>
+              <p class="text-sm text-gray-400">Interior Designer, USA</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-slate-800 rounded-2xl p-6">
+          <div class="flex text-yellow-400 mb-4">★★★★★</div>
+          <p class="text-gray-300 mb-4">"The vetted factory list saved me months of research. I visited 8 factories in 4 days and found my perfect supplier."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center font-bold">MK</div>
+            <div>
+              <p class="font-medium">Michael Klein</p>
+              <p class="text-sm text-gray-400">Retail Chain Owner, Germany</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-6">Why Use Our Factory Directory?</h2>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Pre-Vetted Factories Only</h3>
+                <p class="text-gray-600">Every factory undergoes our 50-point audit. We verify licenses, inspect facilities, and review export history.</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Visual Location Planning</h3>
+                <p class="text-gray-600">See all factories on an interactive map. Plan efficient routes and understand regional clusters at a glance.</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Real Buyer Reviews</h3>
+                <p class="text-gray-600">Read verified reviews from actual buyers who've visited these factories. No fake testimonials.</p>
+              </div>
+            </div>
+            
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg">Local Guide Support</h3>
+                <p class="text-gray-600">Optional bilingual guides to accompany you on factory visits and help with negotiations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 lg:mt-0">
+          <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1000&auto=format&fit=crop" 
+               alt="Factory tour in China" 
+               class="rounded-2xl shadow-2xl"
+               loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="contact" class="py-20 bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600 text-white">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-4">Ready to Find Your Perfect Furniture Supplier?</h2>
+      <p class="text-lg text-indigo-100 mb-8">
+        Get instant access to our complete directory of 47 vetted furniture factories in China, 
+        complete with contact details, capabilities, and insider tips.
+      </p>
+      
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-xl mx-auto">
+        <form action="https://app.kit.com/forms/8195509/subscriptions" method="post" class="space-y-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input type="text" name="first_name" placeholder="First Name" required
+                   class="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white">
+            <input type="text" name="last_name" placeholder="Last Name" required
+                   class="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white">
+          </div>
+          <input type="email" name="email" placeholder="Business Email" required
+                 class="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white">
+          <select name="field[119552]" class="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
+            <option value="">What type of furniture are you sourcing?</option>
+            <option value="Residential">Residential Furniture</option>
+            <option value="Commercial">Commercial/Office Furniture</option>
+            <option value="Outdoor">Outdoor Furniture</option>
+            <option value="Custom">Custom/OEM Manufacturing</option>
+            <option value="Multiple">Multiple Categories</option>
+          </select>
+          <button type="submit" 
+                  class="w-full bg-white text-indigo-700 font-bold py-4 rounded-lg hover:bg-indigo-50 transition flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Get Free Factory Directory
+          </button>
+        </form>
+        <p class="text-sm text-indigo-200 mt-4">📧 PDF guide sent instantly. No spam, unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-12">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="text-white font-bold mb-4">ChinaFactoryTours</h4>
+          <p class="text-sm">The TripAdvisor for factories. Helping international buyers discover and visit vetted manufacturers across China.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Categories</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="furniture.html" class="hover:text-white transition">Furniture</a></li>
+            <li><a href="robotics.html" class="hover:text-white transition">Robotics</a></li>
+            <li><a href="electronics.html" class="hover:text-white transition">Electronics</a></li>
+            <li><a href="ev-battery.html" class="hover:text-white transition">EV & Battery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Resources</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white transition">Factory Directory</a></li>
+            <li><a href="#" class="hover:text-white transition">Tour Planning Guide</a></li>
+            <li><a href="#" class="hover:text-white transition">Import Basics</a></li>
+            <li><a href="tours.html" class="hover:text-white transition">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Contact</h4>
+          <ul class="space-y-2 text-sm">
+            <li>📍 Shenzhen & Shanghai Offices</li>
+            <li>✉️ hello@chinafactorytours.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-8 text-center text-sm">
+        <p>&copy; 2025 China Factory Tours · All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Map Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize map centered on Guangdong province (furniture hub)
+      var map = L.map('factory-map').setView([23.0, 113.3], 8);
+      
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+      
+      // Factory locations
+      var factories = [
+        { name: "Dragonwood Furniture", loc: [22.9, 113.0], city: "Foshan", type: "residential" },
+        { name: "Elite Sofa Manufacturing", loc: [22.8, 114.0], city: "Dongguan", type: "upholstery" },
+        { name: "Modern Living Co.", loc: [22.5, 114.0], city: "Shenzhen", type: "modern" },
+        { name: "Grand Office Solutions", loc: [23.1, 113.3], city: "Guangzhou", type: "commercial" },
+        { name: "Sunrise Furniture Group", loc: [22.7, 113.1], city: "Foshan", type: "residential" },
+        { name: "Comfort Seating Ltd", loc: [22.85, 113.95], city: "Dongguan", type: "upholstery" },
+        { name: "NatureCraft Outdoor", loc: [24.5, 118.1], city: "Xiamen", type: "outdoor" },
+        { name: "Artisan Woodworks", loc: [30.3, 120.2], city: "Hangzhou", type: "designer" },
+        { name: "Premier Cabinetry", loc: [23.0, 113.2], city: "Foshan", type: "custom" },
+        { name: "Luxury Living Intl", loc: [22.95, 113.9], city: "Dongguan", type: "high-end" }
+      ];
+      
+      // Custom icon
+      var factoryIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div style="background-color: #4f46e5; width: 24px; height: 24px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 6px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
+                <span style="color: white; font-size: 10px;">🪑</span>
+               </div>`,
+        iconSize: [24, 24],
+        iconAnchor: [12, 12]
+      });
+      
+      factories.forEach(function(factory) {
+        var marker = L.marker(factory.loc, { icon: factoryIcon }).addTo(map);
+        marker.bindPopup(`
+          <div style="min-width: 200px;">
+            <h3 style="font-weight: bold; margin-bottom: 4px;">${factory.name}</h3>
+            <p style="color: #666; font-size: 12px; margin-bottom: 4px;">📍 ${factory.city}</p>
+            <p style="color: #888; font-size: 11px; text-transform: capitalize;">${factory.type}</p>
+            <a href="#factories" style="color: #4f46e5; font-size: 12px; font-weight: 500;">View Profile →</a>
+          </div>
+        `);
+      });
+    });
+  </script>
+
+</body>
+</html>
